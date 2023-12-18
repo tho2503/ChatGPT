@@ -112,7 +112,7 @@ const handleOutgoingChat = () => {
     const html = `<div class="chat-content user">
                     <div class="chat-details">
                         <p>${userText}</p>
-                        <img src="images/user.jpg" alt="user-img">
+                        <img src="images/cat.jpg" alt="user-img">
                     </div>
                 </div>`;
 
