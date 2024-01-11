@@ -10,7 +10,7 @@ const value3 = "ZT3BlbkFJOjqpqhQ";
 const value4 = "5Lo8BeaO4lOBH";
 
 let userText = null;
-const API_KEY = value1 + value2 + value3 + value4; // Paste your API key here
+const API_KEY = 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; // Paste your API key here
 
 const loadDataFromLocalstorage = () => {
     // Load saved chats and theme from local storage and apply/add on the page
