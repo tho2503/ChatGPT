@@ -10,7 +10,7 @@ const value3 = "-wUzM";
 const value4 = "7vvJb1hXKAy8q";
 const value5 = "Bz";
 const value6 = "lbkFJNenv8";
-const value7 = "sJY56gJT3B;
+const value7 = "sJY56gJT3B";
 const value8 = "VbxwxWWqJ";
 
 let userText = null;
