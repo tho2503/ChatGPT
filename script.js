@@ -14,7 +14,7 @@ const value7 = "sJY56gJT3B";
 const value8 = "VbxwxWWqJ";
 
 let userText = null;
-const API_KEY = value1 + value3 + value8 + value7 + value6 + value5 + value4; // Paste your API key here
+const abc = value1 + value3 + value8 + value7 + value6 + value5 + value4; // Paste your API key here
 
 const loadDataFromLocalstorage = () => {
     // Load saved chats and theme from local storage and apply/add on the page
@@ -49,7 +49,7 @@ const getChatResponse = async (incomingChatDiv) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
+            "Authorization": `Bearer ${abc}`
         },
         body: JSON.stringify({
             model: "text-davinci-003",
