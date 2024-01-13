@@ -4,17 +4,13 @@ const chatContainer = document.querySelector(".chat-container");
 const themeButton = document.querySelector("#theme-btn");
 const deleteButton = document.querySelector("#delete-btn");
 
-const value1 = "sk";
-const value2 = "";
-const value3 = "-wUzM";
-const value4 = "7vvJb1hXKAy8q";
-const value5 = "Bz";
-const value6 = "lbkFJNenv8";
-const value7 = "sJY56gJT3B";
-const value8 = "VbxwxWWqJ";
+const value1 = "sk-LfUudDU";
+const value2 = "fYQDjk71s";
+const value3 = "yvuST3Blb";
+const value4 = "kFJa9PwhLk3eou53bQukLz3";
 
 let userText = null;
-const abc = value1 + value3 + value8 + value7 + value6 + value5 + value4; // Paste your API key here
+const API_KEY = value1 + value2 + value3 + value4; // Paste your API key here
 
 const loadDataFromLocalstorage = () => {
     // Load saved chats and theme from local storage and apply/add on the page
@@ -41,7 +37,7 @@ const createChatElement = (content, className) => {
 }
 
 const getChatResponse = async (incomingChatDiv) => {
-    const API_URL = "https://api.openai.com/v1/completions";
+    const API_URL = "https://api.openai.com/v1/chat/completions";
     const pElement = document.createElement("p");
 
     // Define the properties and data for the API request
@@ -49,11 +45,11 @@ const getChatResponse = async (incomingChatDiv) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${abc}`
+            "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: userText,
+            model: "gpt-3.5-turbo",
+            messages: [{"role": "user", "content": `${userText}` }],
             max_tokens: 2048,
             temperature: 0.2,
             n: 1,
@@ -64,7 +60,7 @@ const getChatResponse = async (incomingChatDiv) => {
     // Send POST request to API, get response and set the reponse as paragraph element text
     try {
         const response = await (await fetch(API_URL, requestOptions)).json();
-        pElement.textContent = response.choices[0].text.trim();
+        pElement.textContent = response.choices[0].message.content.trim();
     } catch (error) { // Add error class to the paragraph element and set error text
         pElement.classList.add("error");
         pElement.textContent = "Oops! Something went wrong while retrieving the response. Please try again.";
@@ -116,7 +112,7 @@ const handleOutgoingChat = () => {
     const html = `<div class="chat-content user">
                     <div class="chat-details">
                         <p>${userText}</p>
-                        <img src="images/cat.jpg" alt="user-img">
+                        <img src="images/user.jpg" alt="user-img">
                     </div>
                 </div>`;
 
