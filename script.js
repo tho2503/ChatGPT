@@ -48,9 +48,10 @@ const getChatResponse = async (incomingChatDiv) => {
             "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: 'Once upon a time',
-            max_tokens: 100
+            model: "gpt-3.5-turbo",
+            message: [{"role": "user", "content": `${userText}`}],
+            max_tokens: 2048,
+            temperature: 0.2
         })
     }
 
