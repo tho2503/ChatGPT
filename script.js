@@ -49,11 +49,8 @@ const getChatResponse = async (incomingChatDiv) => {
         },
         body: JSON.stringify({
             model: "text-davinci-003",
-            messages: [{"role": "user", "content": `${userText}` }],
-            max_tokens: 2048,
-            temperature: 0.2,
-            n: 1,
-            stop: null
+            prompt: 'Once upon a time',
+            max_tokens: 100
         })
     }
 
