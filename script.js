@@ -4,10 +4,10 @@ const chatContainer = document.querySelector(".chat-container");
 const themeButton = document.querySelector("#theme-btn");
 const deleteButton = document.querySelector("#delete-btn");
 
-const value1 = "sk-BUl6CjFUwSHM";
-const value2 = "WJMEO0JOT3Blb";
-const value3 = "kFJbHZr6WS";
-const value4 = "Tk5MLt9rR0wsF";
+const value1 = "sk-M4HrEGfi";
+const value2 = "yUujVvS7NR7iT";
+const value3 = "3BlbkFJhLd2x";
+const value4 = "cmsSzoOpkPWnwoV";
 
 let userText = null;
 const API_KEY = value1 + value2 + value3 + value4; // Paste your API key here
